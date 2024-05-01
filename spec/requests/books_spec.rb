@@ -68,6 +68,8 @@ describe 'Books API', type: :request do
         post '/api/v1/books', params: {
           book: { title: 'The Martian' },
           author: { first_name: 'Andy', last_name: 'Weir', age: 48 }
+        }, headers: {
+          "Authorization" => "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.DiPWrOKsx3sPeVClrm_j07XNdSYHgBa3Qctosdxax3w"
         }
       }.to change { Book.count }.from(0).to(1)
 
